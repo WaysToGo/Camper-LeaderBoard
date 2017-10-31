@@ -1,4 +1,54 @@
+$blackground:black; 
+$graybackground:#f2f2f2;
+$onhover:rgb(29, 41, 44);
+$fontcolor:lightgreen;
+body{
+    background:$blackground;
+}
+
+
 img{
     height:50px;
     width:50px;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+    font: 20px;
+    font-weight: bold;
+}
+table tr td{
+    border:1px solid black; 
+}
+td:first-child{
+    width:2%;
+}
+td{
+    width:30%;
+   text-align:center;
+  
+}
+tr{
+    background: $blackground;
+    color:$fontcolor;
+   border-collapse: collapse;
+    
+}
+tr:hover{
+        background:$onhover;}
+
+tr:nth-child(even){
+    background: $graybackground;
+}
+
+a:link {
+    text-decoration: inherit;
+    color: $fontcolor;
+    cursor: pointer;
+}
+
+a:visited {
+    text-decoration: inherit;
+    color: $fontcolor;
+    cursor: pointer;
 }
