@@ -1,7 +1,7 @@
 var ReactDOM = require('react-dom')
 var React = require('react')
 var Header=require('./header')
-require('./css/index.css')
+require('./css/index.scss')
 var api=require('./util/api')
 
 class MyApp extends React.Component {
@@ -38,7 +38,7 @@ if(this.state.userList!=null){
                 </tbody>
             </table>);
             })
-            console.log(users)
+            // console.log(users)
             return ( 
                 <div>
         
