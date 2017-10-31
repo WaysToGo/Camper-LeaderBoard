@@ -3,6 +3,8 @@ class Body extends React.Component{
     constructor(props) {
         super(props);
     }
+
+
     render(){
         if(this.props.userList!=null){
             const users=this.props.userList.map((a,i)=>{
@@ -13,7 +15,8 @@ class Body extends React.Component{
                         <td >{i+1}</td>
                         <td >
                         <a href={link} target='_blank'>
-                        {a.username}<img src={a.img}/>
+                        <img src={a.img}/>
+                        {a.username}
                         </a>
                         </td>
                         <td >{a.alltime}</td>
@@ -23,17 +26,15 @@ class Body extends React.Component{
                 </table>);
                 })
                 // console.log(users)
+                
                 return ( 
                     <div>
-            
-                      
-                        
                         <table>
                             <tbody>
                         <tr><th>#</th>
                         <th>Camper-Name</th>
-                        <th>All Time Points</th>
-                        <th>Past 30 Days</th> 
+                        <th onClick={()=>this.props.custSort('alltime')}>All Time Points</th>
+                        <th onClick={()=>this.props.custSort('recent')} >Past 30 Days</th> 
                         </tr>
                         </tbody>
                         </table>

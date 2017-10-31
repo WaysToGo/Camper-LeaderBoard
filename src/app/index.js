@@ -9,10 +9,14 @@ class MyApp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            userList:null
+            userList:null,
+            sortedType:'asc'
+
         }
+        this.custSort=this.custSort.bind(this);
 
     }
+
     componentDidMount(){
         api.fetchCamperApi().then((result)=>{
            this.setState({userList:result});
@@ -23,13 +27,35 @@ class MyApp extends React.Component {
 //     componentDidUpdate(prevProps, prevState) {
 //   console.log(this.state.userList)
 //         }
-      
+      custSort(sortBy){
+          console.log(sortBy);
+        if(this.state.sortedType=='asc'){    
+    
+        var userList=this.state.userList.sort((a, b)=>{
+           
+            return a[sortBy] - b[sortBy];
+          });
+          this.setState({userList:userList,sortedType:'dec'});
+        }
+        else if(this.state.sortedType=='dec'){
+          
+            var userList= this.state.userList.sort((a, b)=> {
+               
+                return b[sortBy] - a[sortBy];
+              });
+
+              this.setState({userList:userList,sortedType:'asc'});
+
+        }
+        
+
+      }
 
     render() {
         return(
             <div>
              <Header/>   
-            <Body userList={this.state.userList}/>
+            <Body userList={this.state.userList} custSort={this.custSort}/>
             </div>
         )
     } 
