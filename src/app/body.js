@@ -25,15 +25,15 @@ class Body extends React.Component{
                     </tbody>
                 </table>);
                 })
-                // console.log(users)
+               
                 
                 return ( 
                     <div>
-                        <table>
+                        <table className="header">
                             <tbody>
                         <tr><th>#</th>
                         <th>Camper-Name</th>
-                        <th onClick={()=>this.props.custSort('alltime')}>All Time Points</th>
+                        <th onClick={()=>this.props.custSort('alltime')} >All Time Points</th>
                         <th onClick={()=>this.props.custSort('recent')} >Past 30 Days</th> 
                         </tr>
                         </tbody>

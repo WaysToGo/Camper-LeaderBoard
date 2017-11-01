@@ -24,11 +24,9 @@ class MyApp extends React.Component {
         })
         
     }
-//     componentDidUpdate(prevProps, prevState) {
-//   console.log(this.state.userList)
-//         }
+
       custSort(sortBy){
-          console.log(sortBy);
+         
         if(this.state.sortedType=='asc'){    
     
         var userList=this.state.userList.sort((a, b)=>{

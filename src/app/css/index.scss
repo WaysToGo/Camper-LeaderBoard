@@ -26,10 +26,12 @@ td:first-child{
 }
 td:nth-child(2){
     text-align:left; 
+    
 }
 td{
     width:30%;
    text-align:center;
+  
 
 }
 tr{
@@ -53,4 +55,27 @@ a:visited {
     text-decoration: inherit;
     color: $fontcolor;
     cursor: pointer;
+}
+
+.header{
+   
+    tbody{
+       
+        tr{
+            padding:10px;
+            height:60px;
+            background: $onhover;
+           th{
+            &:nth-child(3){
+                cursor: pointer;
+                text-decoration: underline;
+            }
+            &:nth-child(4){
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+        }
+
+    }
 }
